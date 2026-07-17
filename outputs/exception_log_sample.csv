@@ -1,101 +1,101 @@
 "prod_id","rule_id","issue_category","error_type","affected_field","severity","recommended_action","logged_at"
-48755,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-19708,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-440,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-35300,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-11447,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-11746,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-22314,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-10223,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-16997,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-8473,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-20361,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-41291,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-13390,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-42318,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-30065,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-25633,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-3065,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-45204,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-11120,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-12631,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-4816,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-15222,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-33824,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-15370,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-10352,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-26897,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-36661,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-321,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-5392,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-6738,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-49260,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-42710,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-22244,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-7516,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-2139,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-32519,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-49113,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-7029,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-22742,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-22103,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-13911,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-45156,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-41831,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-33124,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-36473,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-45354,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-16312,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-26344,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-12073,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-14661,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-7422,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-48310,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-37592,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-27983,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-44395,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-30547,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-48584,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-3368,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-25567,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-18662,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-20038,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-30204,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-19284,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-8723,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-29143,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-19023,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-27944,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-28265,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-32703,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-34560,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-48326,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-30873,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-31420,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-28948,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-10693,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-16407,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-35449,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-8970,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-3305,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-32682,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-39809,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-7652,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-24226,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-44407,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-36927,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-41858,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-18268,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-7815,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-21615,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-10778,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-45925,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-26842,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-31193,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-34659,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-10609,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-41669,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-40072,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-1223,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-27439,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
-2508,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:32:46.000
+321,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:49:03.000
+380,VR002,DUPLICATE_RECORD,Duplicate_Employee_ID,employee_id,HIGH,Review duplicated employee ID against HR or master employee records,2026-07-17 16:49:03.000
+17,VR005,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_ID,"id_num, dob",HIGH,Compare DOB column with the DOB embedded inside the ID number,2026-07-17 16:49:03.000
+17,VR006,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_Employee_ID,"employee_id, dob",HIGH,Compare DOB column with the DOB embedded inside the employee ID,2026-07-17 16:49:03.000
+380,VR007,CROSS_FIELD_MISMATCH,Start_Date_Mismatch_in_Employee_ID,"employee_id, start_date",MEDIUM,Compare start_date column with the start date embedded inside the employee ID,2026-07-17 16:49:03.000
+137,VR008,BUSINESS_RULE_EXCEPTION,Start_Age_Under_18,"start_date, dob",HIGH,Review whether the employee start age is valid based on policy,2026-07-17 16:49:03.000
+811,VR009,BUSINESS_RULE_EXCEPTION,Start_Date_Not_First_Day,"start_date, employee_id",LOW,Confirm whether start_date should always begin on the first day of the month,2026-07-17 16:49:03.000
+249,VR011,SALARY_VALIDATION,THP_Under,"thp, group_sal",MEDIUM,Review whether THP value is below the expected salary range,2026-07-17 16:49:03.000
+138,VR012,SALARY_VALIDATION,THP_Over,"thp, group_sal",MEDIUM,Review whether THP value is above the expected salary range,2026-07-17 16:49:03.000
+7,VR013,DUPLICATE_RECORD,Duplicate_Email,email,MEDIUM,"Review whether the email is shared, duplicated, or assigned to the wrong employee",2026-07-17 16:49:03.000
+5,VR014,MISSING_DATA,Missing_Email,email,LOW,Request or complete the missing employee email value,2026-07-17 16:49:03.000
+25,VR015,MISSING_DATA,Missing_Branch_ID,branch_id,MEDIUM,Review source record and assign the correct branch ID,2026-07-17 16:49:03.000
+10,VR016,MISSING_DATA,Missing_Phone_Number,phone_number,LOW,Request or complete the missing phone number,2026-07-17 16:49:03.000
+440,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:49:03.000
+381,VR002,DUPLICATE_RECORD,Duplicate_Employee_ID,employee_id,HIGH,Review duplicated employee ID against HR or master employee records,2026-07-17 16:49:03.000
+20,VR005,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_ID,"id_num, dob",HIGH,Compare DOB column with the DOB embedded inside the ID number,2026-07-17 16:49:03.000
+20,VR006,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_Employee_ID,"employee_id, dob",HIGH,Compare DOB column with the DOB embedded inside the employee ID,2026-07-17 16:49:03.000
+534,VR007,CROSS_FIELD_MISMATCH,Start_Date_Mismatch_in_Employee_ID,"employee_id, start_date",MEDIUM,Compare start_date column with the start date embedded inside the employee ID,2026-07-17 16:49:03.000
+251,VR008,BUSINESS_RULE_EXCEPTION,Start_Age_Under_18,"start_date, dob",HIGH,Review whether the employee start age is valid based on policy,2026-07-17 16:49:03.000
+1163,VR009,BUSINESS_RULE_EXCEPTION,Start_Date_Not_First_Day,"start_date, employee_id",LOW,Confirm whether start_date should always begin on the first day of the month,2026-07-17 16:49:03.000
+431,VR011,SALARY_VALIDATION,THP_Under,"thp, group_sal",MEDIUM,Review whether THP value is below the expected salary range,2026-07-17 16:49:03.000
+528,VR012,SALARY_VALIDATION,THP_Over,"thp, group_sal",MEDIUM,Review whether THP value is above the expected salary range,2026-07-17 16:49:03.000
+10,VR013,DUPLICATE_RECORD,Duplicate_Email,email,MEDIUM,"Review whether the email is shared, duplicated, or assigned to the wrong employee",2026-07-17 16:49:03.000
+50,VR014,MISSING_DATA,Missing_Email,email,LOW,Request or complete the missing employee email value,2026-07-17 16:49:03.000
+67,VR015,MISSING_DATA,Missing_Branch_ID,branch_id,MEDIUM,Review source record and assign the correct branch ID,2026-07-17 16:49:03.000
+27,VR016,MISSING_DATA,Missing_Phone_Number,phone_number,LOW,Request or complete the missing phone number,2026-07-17 16:49:03.000
+499,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:49:03.000
+534,VR002,DUPLICATE_RECORD,Duplicate_Employee_ID,employee_id,HIGH,Review duplicated employee ID against HR or master employee records,2026-07-17 16:49:03.000
+215,VR005,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_ID,"id_num, dob",HIGH,Compare DOB column with the DOB embedded inside the ID number,2026-07-17 16:49:03.000
+215,VR006,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_Employee_ID,"employee_id, dob",HIGH,Compare DOB column with the DOB embedded inside the employee ID,2026-07-17 16:49:03.000
+762,VR007,CROSS_FIELD_MISMATCH,Start_Date_Mismatch_in_Employee_ID,"employee_id, start_date",MEDIUM,Compare start_date column with the start date embedded inside the employee ID,2026-07-17 16:49:03.000
+258,VR008,BUSINESS_RULE_EXCEPTION,Start_Age_Under_18,"start_date, dob",HIGH,Review whether the employee start age is valid based on policy,2026-07-17 16:49:03.000
+1565,VR009,BUSINESS_RULE_EXCEPTION,Start_Date_Not_First_Day,"start_date, employee_id",LOW,Confirm whether start_date should always begin on the first day of the month,2026-07-17 16:49:03.000
+716,VR011,SALARY_VALIDATION,THP_Under,"thp, group_sal",MEDIUM,Review whether THP value is below the expected salary range,2026-07-17 16:49:03.000
+560,VR012,SALARY_VALIDATION,THP_Over,"thp, group_sal",MEDIUM,Review whether THP value is above the expected salary range,2026-07-17 16:49:03.000
+13,VR013,DUPLICATE_RECORD,Duplicate_Email,email,MEDIUM,"Review whether the email is shared, duplicated, or assigned to the wrong employee",2026-07-17 16:49:03.000
+72,VR014,MISSING_DATA,Missing_Email,email,LOW,Request or complete the missing employee email value,2026-07-17 16:49:03.000
+164,VR015,MISSING_DATA,Missing_Branch_ID,branch_id,MEDIUM,Review source record and assign the correct branch ID,2026-07-17 16:49:03.000
+50,VR016,MISSING_DATA,Missing_Phone_Number,phone_number,LOW,Request or complete the missing phone number,2026-07-17 16:49:03.000
+602,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:49:03.000
+535,VR002,DUPLICATE_RECORD,Duplicate_Employee_ID,employee_id,HIGH,Review duplicated employee ID against HR or master employee records,2026-07-17 16:49:03.000
+255,VR005,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_ID,"id_num, dob",HIGH,Compare DOB column with the DOB embedded inside the ID number,2026-07-17 16:49:03.000
+255,VR006,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_Employee_ID,"employee_id, dob",HIGH,Compare DOB column with the DOB embedded inside the employee ID,2026-07-17 16:49:03.000
+1163,VR007,CROSS_FIELD_MISMATCH,Start_Date_Mismatch_in_Employee_ID,"employee_id, start_date",MEDIUM,Compare start_date column with the start date embedded inside the employee ID,2026-07-17 16:49:03.000
+305,VR008,BUSINESS_RULE_EXCEPTION,Start_Age_Under_18,"start_date, dob",HIGH,Review whether the employee start age is valid based on policy,2026-07-17 16:49:03.000
+1674,VR009,BUSINESS_RULE_EXCEPTION,Start_Date_Not_First_Day,"start_date, employee_id",LOW,Confirm whether start_date should always begin on the first day of the month,2026-07-17 16:49:03.000
+923,VR011,SALARY_VALIDATION,THP_Under,"thp, group_sal",MEDIUM,Review whether THP value is below the expected salary range,2026-07-17 16:49:03.000
+611,VR012,SALARY_VALIDATION,THP_Over,"thp, group_sal",MEDIUM,Review whether THP value is above the expected salary range,2026-07-17 16:49:03.000
+15,VR013,DUPLICATE_RECORD,Duplicate_Email,email,MEDIUM,"Review whether the email is shared, duplicated, or assigned to the wrong employee",2026-07-17 16:49:03.000
+73,VR014,MISSING_DATA,Missing_Email,email,LOW,Request or complete the missing employee email value,2026-07-17 16:49:03.000
+347,VR015,MISSING_DATA,Missing_Branch_ID,branch_id,MEDIUM,Review source record and assign the correct branch ID,2026-07-17 16:49:03.000
+64,VR016,MISSING_DATA,Missing_Phone_Number,phone_number,LOW,Request or complete the missing phone number,2026-07-17 16:49:03.000
+1223,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:49:03.000
+762,VR002,DUPLICATE_RECORD,Duplicate_Employee_ID,employee_id,HIGH,Review duplicated employee ID against HR or master employee records,2026-07-17 16:49:03.000
+440,VR005,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_ID,"id_num, dob",HIGH,Compare DOB column with the DOB embedded inside the ID number,2026-07-17 16:49:03.000
+380,VR006,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_Employee_ID,"employee_id, dob",HIGH,Compare DOB column with the DOB embedded inside the employee ID,2026-07-17 16:49:03.000
+1498,VR007,CROSS_FIELD_MISMATCH,Start_Date_Mismatch_in_Employee_ID,"employee_id, start_date",MEDIUM,Compare start_date column with the start date embedded inside the employee ID,2026-07-17 16:49:03.000
+341,VR008,BUSINESS_RULE_EXCEPTION,Start_Age_Under_18,"start_date, dob",HIGH,Review whether the employee start age is valid based on policy,2026-07-17 16:49:03.000
+1703,VR009,BUSINESS_RULE_EXCEPTION,Start_Date_Not_First_Day,"start_date, employee_id",LOW,Confirm whether start_date should always begin on the first day of the month,2026-07-17 16:49:03.000
+1305,VR011,SALARY_VALIDATION,THP_Under,"thp, group_sal",MEDIUM,Review whether THP value is below the expected salary range,2026-07-17 16:49:03.000
+744,VR012,SALARY_VALIDATION,THP_Over,"thp, group_sal",MEDIUM,Review whether THP value is above the expected salary range,2026-07-17 16:49:03.000
+17,VR013,DUPLICATE_RECORD,Duplicate_Email,email,MEDIUM,"Review whether the email is shared, duplicated, or assigned to the wrong employee",2026-07-17 16:49:03.000
+84,VR014,MISSING_DATA,Missing_Email,email,LOW,Request or complete the missing employee email value,2026-07-17 16:49:03.000
+634,VR015,MISSING_DATA,Missing_Branch_ID,branch_id,MEDIUM,Review source record and assign the correct branch ID,2026-07-17 16:49:03.000
+213,VR016,MISSING_DATA,Missing_Phone_Number,phone_number,LOW,Request or complete the missing phone number,2026-07-17 16:49:03.000
+1379,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:49:03.000
+763,VR002,DUPLICATE_RECORD,Duplicate_Employee_ID,employee_id,HIGH,Review duplicated employee ID against HR or master employee records,2026-07-17 16:49:03.000
+499,VR005,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_ID,"id_num, dob",HIGH,Compare DOB column with the DOB embedded inside the ID number,2026-07-17 16:49:03.000
+534,VR006,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_Employee_ID,"employee_id, dob",HIGH,Compare DOB column with the DOB embedded inside the employee ID,2026-07-17 16:49:03.000
+1594,VR007,CROSS_FIELD_MISMATCH,Start_Date_Mismatch_in_Employee_ID,"employee_id, start_date",MEDIUM,Compare start_date column with the start date embedded inside the employee ID,2026-07-17 16:49:03.000
+413,VR008,BUSINESS_RULE_EXCEPTION,Start_Age_Under_18,"start_date, dob",HIGH,Review whether the employee start age is valid based on policy,2026-07-17 16:49:03.000
+2078,VR009,BUSINESS_RULE_EXCEPTION,Start_Date_Not_First_Day,"start_date, employee_id",LOW,Confirm whether start_date should always begin on the first day of the month,2026-07-17 16:49:03.000
+1353,VR011,SALARY_VALIDATION,THP_Under,"thp, group_sal",MEDIUM,Review whether THP value is below the expected salary range,2026-07-17 16:49:03.000
+1064,VR012,SALARY_VALIDATION,THP_Over,"thp, group_sal",MEDIUM,Review whether THP value is above the expected salary range,2026-07-17 16:49:03.000
+22,VR013,DUPLICATE_RECORD,Duplicate_Email,email,MEDIUM,"Review whether the email is shared, duplicated, or assigned to the wrong employee",2026-07-17 16:49:03.000
+156,VR014,MISSING_DATA,Missing_Email,email,LOW,Request or complete the missing employee email value,2026-07-17 16:49:03.000
+881,VR015,MISSING_DATA,Missing_Branch_ID,branch_id,MEDIUM,Review source record and assign the correct branch ID,2026-07-17 16:49:03.000
+244,VR016,MISSING_DATA,Missing_Phone_Number,phone_number,LOW,Request or complete the missing phone number,2026-07-17 16:49:03.000
+1788,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:49:03.000
+1594,VR002,DUPLICATE_RECORD,Duplicate_Employee_ID,employee_id,HIGH,Review duplicated employee ID against HR or master employee records,2026-07-17 16:49:03.000
+602,VR005,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_ID,"id_num, dob",HIGH,Compare DOB column with the DOB embedded inside the ID number,2026-07-17 16:49:03.000
+762,VR006,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_Employee_ID,"employee_id, dob",HIGH,Compare DOB column with the DOB embedded inside the employee ID,2026-07-17 16:49:03.000
+1674,VR007,CROSS_FIELD_MISMATCH,Start_Date_Mismatch_in_Employee_ID,"employee_id, start_date",MEDIUM,Compare start_date column with the start date embedded inside the employee ID,2026-07-17 16:49:03.000
+494,VR008,BUSINESS_RULE_EXCEPTION,Start_Age_Under_18,"start_date, dob",HIGH,Review whether the employee start age is valid based on policy,2026-07-17 16:49:03.000
+2464,VR009,BUSINESS_RULE_EXCEPTION,Start_Date_Not_First_Day,"start_date, employee_id",LOW,Confirm whether start_date should always begin on the first day of the month,2026-07-17 16:49:03.000
+1757,VR011,SALARY_VALIDATION,THP_Under,"thp, group_sal",MEDIUM,Review whether THP value is below the expected salary range,2026-07-17 16:49:03.000
+1157,VR012,SALARY_VALIDATION,THP_Over,"thp, group_sal",MEDIUM,Review whether THP value is above the expected salary range,2026-07-17 16:49:03.000
+28,VR013,DUPLICATE_RECORD,Duplicate_Email,email,MEDIUM,"Review whether the email is shared, duplicated, or assigned to the wrong employee",2026-07-17 16:49:03.000
+217,VR014,MISSING_DATA,Missing_Email,email,LOW,Request or complete the missing employee email value,2026-07-17 16:49:03.000
+884,VR015,MISSING_DATA,Missing_Branch_ID,branch_id,MEDIUM,Review source record and assign the correct branch ID,2026-07-17 16:49:03.000
+268,VR016,MISSING_DATA,Missing_Phone_Number,phone_number,LOW,Request or complete the missing phone number,2026-07-17 16:49:03.000
+2139,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:49:03.000
+1595,VR002,DUPLICATE_RECORD,Duplicate_Employee_ID,employee_id,HIGH,Review duplicated employee ID against HR or master employee records,2026-07-17 16:49:03.000
+1379,VR005,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_ID,"id_num, dob",HIGH,Compare DOB column with the DOB embedded inside the ID number,2026-07-17 16:49:03.000
+1594,VR006,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_Employee_ID,"employee_id, dob",HIGH,Compare DOB column with the DOB embedded inside the employee ID,2026-07-17 16:49:03.000
+1703,VR007,CROSS_FIELD_MISMATCH,Start_Date_Mismatch_in_Employee_ID,"employee_id, start_date",MEDIUM,Compare start_date column with the start date embedded inside the employee ID,2026-07-17 16:49:03.000
+495,VR008,BUSINESS_RULE_EXCEPTION,Start_Age_Under_18,"start_date, dob",HIGH,Review whether the employee start age is valid based on policy,2026-07-17 16:49:03.000
+2874,VR009,BUSINESS_RULE_EXCEPTION,Start_Date_Not_First_Day,"start_date, employee_id",LOW,Confirm whether start_date should always begin on the first day of the month,2026-07-17 16:49:03.000
+2051,VR011,SALARY_VALIDATION,THP_Under,"thp, group_sal",MEDIUM,Review whether THP value is below the expected salary range,2026-07-17 16:49:03.000
+1265,VR012,SALARY_VALIDATION,THP_Over,"thp, group_sal",MEDIUM,Review whether THP value is above the expected salary range,2026-07-17 16:49:03.000
