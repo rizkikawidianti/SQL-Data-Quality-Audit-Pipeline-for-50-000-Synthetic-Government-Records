@@ -51,7 +51,7 @@ The objective of this project is to build a structured SQL workflow that can:
 6. Generate a row-level exception log
 7. Summarize data quality results for review
 
-## Dataset
+## [Dataset](data/synthetic_employee_profile_50000.csv)
 
 The project uses a synthetic employee profile dataset with approximately 50,000 records.
 
@@ -94,11 +94,8 @@ This includes checking:
 - Distinct category values
 - Date and salary ranges
 
-File:
+File: [01_data_profiling.sql](sql/01_data_profiling.sql)
 
-```
-sql/01_data_profiling.sql
-```
 
 ### 2. Staging and Deduplication
 
@@ -106,11 +103,8 @@ A staging table is created to safely process the raw data before moving it into 
 
 Duplicate records are identified using SQL window functions and removed from the staging layer.
 
-File:
+File: [02_staging_and_deduplication.sql](sql/02_staging_and_deduplication.sql)
 
-```
-sql/02_staging_and_deduplication.sql
-```
 
 ### 3. Cleaning and Standardization
 
@@ -124,11 +118,8 @@ Examples include:
 - Replacing blank emails with null values
 - Converting cleaned columns into final data types
 
-File:
+File: [03_cleaning_standardization.sql](sql/03_cleaning_standardization.sql)
 
-```
-sql/03_cleaning_standardization.sql
-```
 
 ### 4. Production Table Creation
 
@@ -136,11 +127,8 @@ After cleaning, a production-ready table is created from the staging table.
 
 A stable production ID is generated to support validation tracking and exception logging.
 
-File:
+File:c [04_create_production_table.sql](sql/04_create_production_table.sql)
 
-```
-sql/04_create_production_table.sql
-```
 
 ### 5. Validation Checks
 
@@ -158,11 +146,8 @@ The checks include:
 - Salary group and take-home pay consistency checks
 - Duplicate email checks
 
-File:
+File: [05_validation_checks.sql](sql/05_validation_checks.sql)
 
-```
-sql/05_validation_checks.sql
-```
 
 ### 6. Exception Log
 
@@ -181,11 +166,8 @@ The exception log captures:
 
 This makes the validation output easier to audit, review, and prioritize.
 
-File:
+File: [sql/06_exception_log.sql](sql/06_exception_log.sql)
 
-```
-sql/06_exception_log.sql
-```
 
 ### 7. Quality Summary
 
@@ -200,25 +182,23 @@ The quality summary includes:
 - Passed records vs review-required records
 - Validation pass rate
 
-File:
+File: [07_quality_summary.sql](sql/07_quality_summary.sql)
 
-```
-sql/07_quality_summary.sql
-```
 
 ### 8. Remediation and Revalidation
 
 The SQL pipeline identifies records that require review, but data correction often requires confirmation from other departments or source data owners.
 
-In a real workflow, the exception log would be used as a handoff file. The responsible team would verify the flagged records and provide corrected values or confirmation. After updates are applied, the validation scripts would be rerun to measure the final validation pass rate.
+In real data quality work, validation does not stop after issues are detected. Some failed records require confirmation from the responsible department before the database can be updated. The responsible department would verify the flagged records and provide corrected values or confirmation. After updates are applied, the validation scripts would be rerun to measure the final validation pass rate.
 
 This reflects the practical data quality cycle: detect, review, correct, revalidate, and report.
+
 
 ## Main Outputs
 
 This project produces three analytical outputs and one operational handoff template.
 
-### 1. validation_summary.csv
+### 1. [validation_summary.csv](outputs/validation_summary.csv)
 
 A high-level summary of the validation result.
 
@@ -235,7 +215,7 @@ Example metrics:
 - Review-required records
 - Validation pass rate
 
-### 2. exception_log_sample.csv
+### 2. [exception_log_sample.csv](outputs/exception_log_sample.csv)
 
 A row-level audit log of validation failures.
 
@@ -254,7 +234,7 @@ recommended_action
 logged_at
 ```
 
-### 3. issue_count_by_error_type.csv
+### 3. [issue_count_by_error_type.csv](outputs/issue_count_by_error_type.csv)
 
 A summary of recurring data quality issues.
 
@@ -270,7 +250,7 @@ severity
 total_records
 ```
 
-### data_correction_request_template.xlsx
+### [data_correction_request_template.xlsx](templates/data_correction_request_template.xlsx)
 
 A sample operational handoff template used to request corrected values from the responsible data owner or department.
 
