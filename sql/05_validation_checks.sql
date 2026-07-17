@@ -106,8 +106,8 @@ select
 from
     emp_prof_prod
 where
-    length(id_num) < 10
-    or length(id_num) > 12;
+    length(phone_number) < 10
+    or length(phone_number) > 12;
 
 
 
