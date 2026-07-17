@@ -24,7 +24,7 @@ After the corrected file is returned, the database can be updated and the valida
 
 ## Why This Matters
 
-The exception log is not only a technical output. It is also a coordination tool.
+The exception log is not only a technical output. It is also a coordination tool. In my real monthly workflow, the initial exception result was followed by department confirmation, database updates, and revalidation. This remediation cycle helped maintain the final validated dataset at around 99%+ accuracy before reporting.
 
 It helps reviewers understand:
 
@@ -38,7 +38,7 @@ It helps reviewers understand:
 
 The initial validation run may show many records requiring review. This does not mean the final reporting data remains inaccurate.
 
-In a real monthly process, flagged records are reviewed and corrected before the reporting deadline. After corrections are applied, the validation checks are rerun to confirm that the final dataset meets the expected quality threshold.
+In a real monthly process, flagged records are reviewed and corrected before the reporting deadline. After corrections are applied, the validation checks are rerun to confirm that the final dataset meets the expected quality threshold. 
 
 ## Practical Example
 
