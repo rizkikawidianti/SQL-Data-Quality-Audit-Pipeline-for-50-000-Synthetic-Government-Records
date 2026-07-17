@@ -4,7 +4,11 @@ This document explains how validation findings would be handled after the SQL au
 
 ## Purpose
 
-The SQL pipeline identifies records that fail validation rules. In a real business environment, these records are not automatically corrected without confirmation. Many issues require coordination with data owners, branch teams, HR teams, operations teams, or other departments responsible for the original data.
+The SQL pipeline identifies records that fail validation rules. In a real business environment, these records are not automatically corrected without confirmation. Many issues require coordination with data owners, branch teams, HR teams, operations teams, or other departments responsible for the original data. In a real workflow, not every issue can be fixed directly from SQL. Some missing or inconsistent values require confirmation from the responsible department.
+
+For that reason, the exception log can be converted into a missing data request file. This file contains the affected production record, the failed validation rule, the affected field, the current value, and blank columns for the responsible team to fill in the corrected data.
+
+After the corrected file is returned, the database can be updated and the validation checks can be run again.
 
 ## Process
 
@@ -48,4 +52,4 @@ In a real monthly process, flagged records are reviewed and corrected before the
 
 ## Real-World Context
 
-This portfolio project uses synthetic data, but the workflow reflects a real data quality process used in a high-accountability institutional environment. In that environment, repeated validation, follow-up, correction, and revalidation helped maintain final validated data accuracy at around 99% or higher before reporting.
+This portfolio project uses synthetic data, but the workflow reflects a real data quality process used in a high-accountability institutional environment. In that environment, repeated validation, follow-up, correction, and revalidation helped maintain final validated data accuracy at around 99% or higher before reporting. 
