@@ -3,7 +3,7 @@ SQL-based data quality audit pipeline for profiling, cleaning, validating, and f
 
 # Overview
 
-This portfolio version demonstrates the audit pipeline and exception detection layer. In my real monthly workflow, the exception log would be followed by a remediation and revalidation cycle. After department confirmation and database updates, the final validated dataset was maintained at around 99%+ accuracy before month-end reporting.
+This project demonstrates a SQL-based data quality audit workflow using a 50,000-row synthetic employee dataset modeled after a large-scale government institution data validation case.
 
 The goal of this project is to show how raw data can be profiled, cleaned, standardized, validated, and converted into review-ready outputs using SQL.
 
@@ -50,7 +50,6 @@ The objective of this project is to build a structured SQL workflow that can:
 5. Apply validation and anomaly detection rules
 6. Generate a row-level exception log
 7. Summarize data quality results for review
-8. Remediation and Revalidation
 
 ## Dataset
 
@@ -269,6 +268,12 @@ severity
 total_records
 ```
 
+### data_correction_request_template.xlsx
+
+A sample operational handoff template used to request corrected values from the responsible data owner or department.
+
+The file contains records pulled from the production table and exception log where required fields are missing or need confirmation. Blank correction columns are included so the responsible team can provide the correct values before the database is updated and revalidated.
+
 ## Repository Structure
 
 ```
@@ -293,6 +298,9 @@ sql-data-quality-audit-pipeline/
 │   ├── exception_log_sample.csv
 │   └── issue_count_by_error_type.csv
 │
+├── templates/
+│   └── data_correction_request_template.xlsx
+|
 └── docs/
     ├── validation_rules.md
     └── accuracy_proof.md
@@ -309,7 +317,7 @@ sql-data-quality-audit-pipeline/
 | Start Age Rule | Flags records where start age is outside the expected policy range | High |
 | Start Date Rule | Flags records where start date does not follow the expected day rule | Low |
 | Salary Validation | Compares salary group against take-home pay range | Medium |
-| Duplicate Email | Detects repeated email values | Low |
+| Duplicate Email | Detects repeated email values | Medium |
 
 ## Proof of Accuracy
 
@@ -340,3 +348,18 @@ This project demonstrates my ability to:
 This project is inspired by a real data validation workflow applied in an institutional environment. However, all data, table names, field names, and outputs in this repository have been anonymized, generalized, or recreated using synthetic data.
 
 No confidential company, government, employee, or citizen data is included in this repository.
+
+## Recommended Use
+
+This project can be reviewed as a portfolio example for roles such as:
+
+- Data Analyst
+- SQL Analyst
+- Data Quality Analyst
+- Data Governance Analyst
+- Business Intelligence Analyst
+- Reporting Analyst
+
+## Project Summary
+
+Built a SQL-based data quality audit pipeline that profiles, cleans, validates, and summarizes a 50,000-row synthetic dataset. The workflow produces audit-ready outputs including a validation summary, exception log, and issue breakdown by error type.
