@@ -222,7 +222,9 @@ This project produces three analytical outputs and one operational handoff templ
 
 A high-level summary of the validation result.
 
-This output is designed for quick review and shows the overall condition of the dataset after validation.
+This output is designed for quick review and shows the overall condition of the dataset after the initial validation run.
+
+**Note:** This output represents the initial audit result before remediation. In a real monthly workflow, records requiring review would be sent to the responsible department through a correction request template. After confirmed updates were applied, the validation checks would be rerun to produce the final reporting dataset.
 
 Example metrics:
 
