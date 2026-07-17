@@ -3,7 +3,7 @@ SQL-based data quality audit pipeline for profiling, cleaning, validating, and f
 
 # Overview
 
-This project demonstrates a SQL-based data quality audit workflow using a 50,000-row synthetic employee dataset modeled after a large-scale government institution data validation case.
+This portfolio version demonstrates the audit pipeline and exception detection layer. In my real monthly workflow, the exception log would be followed by a remediation and revalidation cycle. After department confirmation and database updates, the final validated dataset was maintained at around 99%+ accuracy before month-end reporting.
 
 The goal of this project is to show how raw data can be profiled, cleaned, standardized, validated, and converted into review-ready outputs using SQL.
 
@@ -50,6 +50,7 @@ The objective of this project is to build a structured SQL workflow that can:
 5. Apply validation and anomaly detection rules
 6. Generate a row-level exception log
 7. Summarize data quality results for review
+8. Remediation and Revalidation
 
 ## Dataset
 
@@ -205,6 +206,14 @@ File:
 ```
 sql/07_quality_summary.sql
 ```
+
+### 8. Remediation and Revalidation
+
+The SQL pipeline identifies records that require review, but data correction often requires confirmation from other departments or source data owners.
+
+In a real workflow, the exception log would be used as a handoff file. The responsible team would verify the flagged records and provide corrected values or confirmation. After updates are applied, the validation scripts would be rerun to measure the final validation pass rate.
+
+This reflects the practical data quality cycle: detect, review, correct, revalidate, and report.
 
 ## Main Outputs
 
