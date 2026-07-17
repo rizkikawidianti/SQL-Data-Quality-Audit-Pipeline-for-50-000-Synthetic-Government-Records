@@ -1,0 +1,8 @@
+"metric","value"
+total_raw_rows,"50000"
+duplicate_rows_removed,"150"
+total_clean_records,"49850"
+records_with_issues,"24714"
+records_passed_validation,"25136"
+total_issue_flags,"27260"
+validation_pass_rate,"50.42%"
