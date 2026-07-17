@@ -216,7 +216,7 @@ This reflects the practical data quality cycle: detect, review, correct, revalid
 
 ## Main Outputs
 
-This project produces three main outputs.
+This project produces three analytical outputs and one operational handoff template.
 
 ### 1. validation_summary.csv
 
