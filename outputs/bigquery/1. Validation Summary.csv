@@ -1,0 +1,2 @@
+total_raw_rows,duplicate_rows_removed,total_production_records,records_with_issues,records_passed_validation,total_issue_flags,validation_pass_rate
+50000,150,49850,24614,25236,27152,50.62

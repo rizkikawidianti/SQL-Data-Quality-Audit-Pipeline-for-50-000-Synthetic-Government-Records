@@ -1,0 +1,101 @@
+"prod_id","rule_id","issue_category","error_type","affected_field","severity","recommended_action","logged_at"
+321,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:49:03.000
+380,VR002,DUPLICATE_RECORD,Duplicate_Employee_ID,employee_id,HIGH,Review duplicated employee ID against HR or master employee records,2026-07-17 16:49:03.000
+17,VR005,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_ID,"id_num, dob",HIGH,Compare DOB column with the DOB embedded inside the ID number,2026-07-17 16:49:03.000
+17,VR006,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_Employee_ID,"employee_id, dob",HIGH,Compare DOB column with the DOB embedded inside the employee ID,2026-07-17 16:49:03.000
+380,VR007,CROSS_FIELD_MISMATCH,Start_Date_Mismatch_in_Employee_ID,"employee_id, start_date",MEDIUM,Compare start_date column with the start date embedded inside the employee ID,2026-07-17 16:49:03.000
+137,VR008,BUSINESS_RULE_EXCEPTION,Start_Age_Under_18,"start_date, dob",HIGH,Review whether the employee start age is valid based on policy,2026-07-17 16:49:03.000
+811,VR009,BUSINESS_RULE_EXCEPTION,Start_Date_Not_First_Day,"start_date, employee_id",LOW,Confirm whether start_date should always begin on the first day of the month,2026-07-17 16:49:03.000
+249,VR011,SALARY_VALIDATION,THP_Under,"thp, group_sal",MEDIUM,Review whether THP value is below the expected salary range,2026-07-17 16:49:03.000
+138,VR012,SALARY_VALIDATION,THP_Over,"thp, group_sal",MEDIUM,Review whether THP value is above the expected salary range,2026-07-17 16:49:03.000
+7,VR013,DUPLICATE_RECORD,Duplicate_Email,email,MEDIUM,"Review whether the email is shared, duplicated, or assigned to the wrong employee",2026-07-17 16:49:03.000
+5,VR014,MISSING_DATA,Missing_Email,email,LOW,Request or complete the missing employee email value,2026-07-17 16:49:03.000
+25,VR015,MISSING_DATA,Missing_Branch_ID,branch_id,MEDIUM,Review source record and assign the correct branch ID,2026-07-17 16:49:03.000
+10,VR016,MISSING_DATA,Missing_Phone_Number,phone_number,LOW,Request or complete the missing phone number,2026-07-17 16:49:03.000
+440,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:49:03.000
+381,VR002,DUPLICATE_RECORD,Duplicate_Employee_ID,employee_id,HIGH,Review duplicated employee ID against HR or master employee records,2026-07-17 16:49:03.000
+20,VR005,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_ID,"id_num, dob",HIGH,Compare DOB column with the DOB embedded inside the ID number,2026-07-17 16:49:03.000
+20,VR006,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_Employee_ID,"employee_id, dob",HIGH,Compare DOB column with the DOB embedded inside the employee ID,2026-07-17 16:49:03.000
+534,VR007,CROSS_FIELD_MISMATCH,Start_Date_Mismatch_in_Employee_ID,"employee_id, start_date",MEDIUM,Compare start_date column with the start date embedded inside the employee ID,2026-07-17 16:49:03.000
+251,VR008,BUSINESS_RULE_EXCEPTION,Start_Age_Under_18,"start_date, dob",HIGH,Review whether the employee start age is valid based on policy,2026-07-17 16:49:03.000
+1163,VR009,BUSINESS_RULE_EXCEPTION,Start_Date_Not_First_Day,"start_date, employee_id",LOW,Confirm whether start_date should always begin on the first day of the month,2026-07-17 16:49:03.000
+431,VR011,SALARY_VALIDATION,THP_Under,"thp, group_sal",MEDIUM,Review whether THP value is below the expected salary range,2026-07-17 16:49:03.000
+528,VR012,SALARY_VALIDATION,THP_Over,"thp, group_sal",MEDIUM,Review whether THP value is above the expected salary range,2026-07-17 16:49:03.000
+10,VR013,DUPLICATE_RECORD,Duplicate_Email,email,MEDIUM,"Review whether the email is shared, duplicated, or assigned to the wrong employee",2026-07-17 16:49:03.000
+50,VR014,MISSING_DATA,Missing_Email,email,LOW,Request or complete the missing employee email value,2026-07-17 16:49:03.000
+67,VR015,MISSING_DATA,Missing_Branch_ID,branch_id,MEDIUM,Review source record and assign the correct branch ID,2026-07-17 16:49:03.000
+27,VR016,MISSING_DATA,Missing_Phone_Number,phone_number,LOW,Request or complete the missing phone number,2026-07-17 16:49:03.000
+499,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:49:03.000
+534,VR002,DUPLICATE_RECORD,Duplicate_Employee_ID,employee_id,HIGH,Review duplicated employee ID against HR or master employee records,2026-07-17 16:49:03.000
+215,VR005,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_ID,"id_num, dob",HIGH,Compare DOB column with the DOB embedded inside the ID number,2026-07-17 16:49:03.000
+215,VR006,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_Employee_ID,"employee_id, dob",HIGH,Compare DOB column with the DOB embedded inside the employee ID,2026-07-17 16:49:03.000
+762,VR007,CROSS_FIELD_MISMATCH,Start_Date_Mismatch_in_Employee_ID,"employee_id, start_date",MEDIUM,Compare start_date column with the start date embedded inside the employee ID,2026-07-17 16:49:03.000
+258,VR008,BUSINESS_RULE_EXCEPTION,Start_Age_Under_18,"start_date, dob",HIGH,Review whether the employee start age is valid based on policy,2026-07-17 16:49:03.000
+1565,VR009,BUSINESS_RULE_EXCEPTION,Start_Date_Not_First_Day,"start_date, employee_id",LOW,Confirm whether start_date should always begin on the first day of the month,2026-07-17 16:49:03.000
+716,VR011,SALARY_VALIDATION,THP_Under,"thp, group_sal",MEDIUM,Review whether THP value is below the expected salary range,2026-07-17 16:49:03.000
+560,VR012,SALARY_VALIDATION,THP_Over,"thp, group_sal",MEDIUM,Review whether THP value is above the expected salary range,2026-07-17 16:49:03.000
+13,VR013,DUPLICATE_RECORD,Duplicate_Email,email,MEDIUM,"Review whether the email is shared, duplicated, or assigned to the wrong employee",2026-07-17 16:49:03.000
+72,VR014,MISSING_DATA,Missing_Email,email,LOW,Request or complete the missing employee email value,2026-07-17 16:49:03.000
+164,VR015,MISSING_DATA,Missing_Branch_ID,branch_id,MEDIUM,Review source record and assign the correct branch ID,2026-07-17 16:49:03.000
+50,VR016,MISSING_DATA,Missing_Phone_Number,phone_number,LOW,Request or complete the missing phone number,2026-07-17 16:49:03.000
+602,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:49:03.000
+535,VR002,DUPLICATE_RECORD,Duplicate_Employee_ID,employee_id,HIGH,Review duplicated employee ID against HR or master employee records,2026-07-17 16:49:03.000
+255,VR005,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_ID,"id_num, dob",HIGH,Compare DOB column with the DOB embedded inside the ID number,2026-07-17 16:49:03.000
+255,VR006,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_Employee_ID,"employee_id, dob",HIGH,Compare DOB column with the DOB embedded inside the employee ID,2026-07-17 16:49:03.000
+1163,VR007,CROSS_FIELD_MISMATCH,Start_Date_Mismatch_in_Employee_ID,"employee_id, start_date",MEDIUM,Compare start_date column with the start date embedded inside the employee ID,2026-07-17 16:49:03.000
+305,VR008,BUSINESS_RULE_EXCEPTION,Start_Age_Under_18,"start_date, dob",HIGH,Review whether the employee start age is valid based on policy,2026-07-17 16:49:03.000
+1674,VR009,BUSINESS_RULE_EXCEPTION,Start_Date_Not_First_Day,"start_date, employee_id",LOW,Confirm whether start_date should always begin on the first day of the month,2026-07-17 16:49:03.000
+923,VR011,SALARY_VALIDATION,THP_Under,"thp, group_sal",MEDIUM,Review whether THP value is below the expected salary range,2026-07-17 16:49:03.000
+611,VR012,SALARY_VALIDATION,THP_Over,"thp, group_sal",MEDIUM,Review whether THP value is above the expected salary range,2026-07-17 16:49:03.000
+15,VR013,DUPLICATE_RECORD,Duplicate_Email,email,MEDIUM,"Review whether the email is shared, duplicated, or assigned to the wrong employee",2026-07-17 16:49:03.000
+73,VR014,MISSING_DATA,Missing_Email,email,LOW,Request or complete the missing employee email value,2026-07-17 16:49:03.000
+347,VR015,MISSING_DATA,Missing_Branch_ID,branch_id,MEDIUM,Review source record and assign the correct branch ID,2026-07-17 16:49:03.000
+64,VR016,MISSING_DATA,Missing_Phone_Number,phone_number,LOW,Request or complete the missing phone number,2026-07-17 16:49:03.000
+1223,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:49:03.000
+762,VR002,DUPLICATE_RECORD,Duplicate_Employee_ID,employee_id,HIGH,Review duplicated employee ID against HR or master employee records,2026-07-17 16:49:03.000
+440,VR005,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_ID,"id_num, dob",HIGH,Compare DOB column with the DOB embedded inside the ID number,2026-07-17 16:49:03.000
+380,VR006,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_Employee_ID,"employee_id, dob",HIGH,Compare DOB column with the DOB embedded inside the employee ID,2026-07-17 16:49:03.000
+1498,VR007,CROSS_FIELD_MISMATCH,Start_Date_Mismatch_in_Employee_ID,"employee_id, start_date",MEDIUM,Compare start_date column with the start date embedded inside the employee ID,2026-07-17 16:49:03.000
+341,VR008,BUSINESS_RULE_EXCEPTION,Start_Age_Under_18,"start_date, dob",HIGH,Review whether the employee start age is valid based on policy,2026-07-17 16:49:03.000
+1703,VR009,BUSINESS_RULE_EXCEPTION,Start_Date_Not_First_Day,"start_date, employee_id",LOW,Confirm whether start_date should always begin on the first day of the month,2026-07-17 16:49:03.000
+1305,VR011,SALARY_VALIDATION,THP_Under,"thp, group_sal",MEDIUM,Review whether THP value is below the expected salary range,2026-07-17 16:49:03.000
+744,VR012,SALARY_VALIDATION,THP_Over,"thp, group_sal",MEDIUM,Review whether THP value is above the expected salary range,2026-07-17 16:49:03.000
+17,VR013,DUPLICATE_RECORD,Duplicate_Email,email,MEDIUM,"Review whether the email is shared, duplicated, or assigned to the wrong employee",2026-07-17 16:49:03.000
+84,VR014,MISSING_DATA,Missing_Email,email,LOW,Request or complete the missing employee email value,2026-07-17 16:49:03.000
+634,VR015,MISSING_DATA,Missing_Branch_ID,branch_id,MEDIUM,Review source record and assign the correct branch ID,2026-07-17 16:49:03.000
+213,VR016,MISSING_DATA,Missing_Phone_Number,phone_number,LOW,Request or complete the missing phone number,2026-07-17 16:49:03.000
+1379,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:49:03.000
+763,VR002,DUPLICATE_RECORD,Duplicate_Employee_ID,employee_id,HIGH,Review duplicated employee ID against HR or master employee records,2026-07-17 16:49:03.000
+499,VR005,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_ID,"id_num, dob",HIGH,Compare DOB column with the DOB embedded inside the ID number,2026-07-17 16:49:03.000
+534,VR006,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_Employee_ID,"employee_id, dob",HIGH,Compare DOB column with the DOB embedded inside the employee ID,2026-07-17 16:49:03.000
+1594,VR007,CROSS_FIELD_MISMATCH,Start_Date_Mismatch_in_Employee_ID,"employee_id, start_date",MEDIUM,Compare start_date column with the start date embedded inside the employee ID,2026-07-17 16:49:03.000
+413,VR008,BUSINESS_RULE_EXCEPTION,Start_Age_Under_18,"start_date, dob",HIGH,Review whether the employee start age is valid based on policy,2026-07-17 16:49:03.000
+2078,VR009,BUSINESS_RULE_EXCEPTION,Start_Date_Not_First_Day,"start_date, employee_id",LOW,Confirm whether start_date should always begin on the first day of the month,2026-07-17 16:49:03.000
+1353,VR011,SALARY_VALIDATION,THP_Under,"thp, group_sal",MEDIUM,Review whether THP value is below the expected salary range,2026-07-17 16:49:03.000
+1064,VR012,SALARY_VALIDATION,THP_Over,"thp, group_sal",MEDIUM,Review whether THP value is above the expected salary range,2026-07-17 16:49:03.000
+22,VR013,DUPLICATE_RECORD,Duplicate_Email,email,MEDIUM,"Review whether the email is shared, duplicated, or assigned to the wrong employee",2026-07-17 16:49:03.000
+156,VR014,MISSING_DATA,Missing_Email,email,LOW,Request or complete the missing employee email value,2026-07-17 16:49:03.000
+881,VR015,MISSING_DATA,Missing_Branch_ID,branch_id,MEDIUM,Review source record and assign the correct branch ID,2026-07-17 16:49:03.000
+244,VR016,MISSING_DATA,Missing_Phone_Number,phone_number,LOW,Request or complete the missing phone number,2026-07-17 16:49:03.000
+1788,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:49:03.000
+1594,VR002,DUPLICATE_RECORD,Duplicate_Employee_ID,employee_id,HIGH,Review duplicated employee ID against HR or master employee records,2026-07-17 16:49:03.000
+602,VR005,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_ID,"id_num, dob",HIGH,Compare DOB column with the DOB embedded inside the ID number,2026-07-17 16:49:03.000
+762,VR006,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_Employee_ID,"employee_id, dob",HIGH,Compare DOB column with the DOB embedded inside the employee ID,2026-07-17 16:49:03.000
+1674,VR007,CROSS_FIELD_MISMATCH,Start_Date_Mismatch_in_Employee_ID,"employee_id, start_date",MEDIUM,Compare start_date column with the start date embedded inside the employee ID,2026-07-17 16:49:03.000
+494,VR008,BUSINESS_RULE_EXCEPTION,Start_Age_Under_18,"start_date, dob",HIGH,Review whether the employee start age is valid based on policy,2026-07-17 16:49:03.000
+2464,VR009,BUSINESS_RULE_EXCEPTION,Start_Date_Not_First_Day,"start_date, employee_id",LOW,Confirm whether start_date should always begin on the first day of the month,2026-07-17 16:49:03.000
+1757,VR011,SALARY_VALIDATION,THP_Under,"thp, group_sal",MEDIUM,Review whether THP value is below the expected salary range,2026-07-17 16:49:03.000
+1157,VR012,SALARY_VALIDATION,THP_Over,"thp, group_sal",MEDIUM,Review whether THP value is above the expected salary range,2026-07-17 16:49:03.000
+28,VR013,DUPLICATE_RECORD,Duplicate_Email,email,MEDIUM,"Review whether the email is shared, duplicated, or assigned to the wrong employee",2026-07-17 16:49:03.000
+217,VR014,MISSING_DATA,Missing_Email,email,LOW,Request or complete the missing employee email value,2026-07-17 16:49:03.000
+884,VR015,MISSING_DATA,Missing_Branch_ID,branch_id,MEDIUM,Review source record and assign the correct branch ID,2026-07-17 16:49:03.000
+268,VR016,MISSING_DATA,Missing_Phone_Number,phone_number,LOW,Request or complete the missing phone number,2026-07-17 16:49:03.000
+2139,VR001,DUPLICATE_RECORD,Duplicate_ID,id_num,HIGH,Review duplicated ID number against the source system,2026-07-17 16:49:03.000
+1595,VR002,DUPLICATE_RECORD,Duplicate_Employee_ID,employee_id,HIGH,Review duplicated employee ID against HR or master employee records,2026-07-17 16:49:03.000
+1379,VR005,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_ID,"id_num, dob",HIGH,Compare DOB column with the DOB embedded inside the ID number,2026-07-17 16:49:03.000
+1594,VR006,CROSS_FIELD_MISMATCH,DOB_Mismatch_in_Employee_ID,"employee_id, dob",HIGH,Compare DOB column with the DOB embedded inside the employee ID,2026-07-17 16:49:03.000
+1703,VR007,CROSS_FIELD_MISMATCH,Start_Date_Mismatch_in_Employee_ID,"employee_id, start_date",MEDIUM,Compare start_date column with the start date embedded inside the employee ID,2026-07-17 16:49:03.000
+495,VR008,BUSINESS_RULE_EXCEPTION,Start_Age_Under_18,"start_date, dob",HIGH,Review whether the employee start age is valid based on policy,2026-07-17 16:49:03.000
+2874,VR009,BUSINESS_RULE_EXCEPTION,Start_Date_Not_First_Day,"start_date, employee_id",LOW,Confirm whether start_date should always begin on the first day of the month,2026-07-17 16:49:03.000
+2051,VR011,SALARY_VALIDATION,THP_Under,"thp, group_sal",MEDIUM,Review whether THP value is below the expected salary range,2026-07-17 16:49:03.000
+1265,VR012,SALARY_VALIDATION,THP_Over,"thp, group_sal",MEDIUM,Review whether THP value is above the expected salary range,2026-07-17 16:49:03.000
