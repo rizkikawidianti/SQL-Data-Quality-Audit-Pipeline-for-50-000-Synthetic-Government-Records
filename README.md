@@ -1,229 +1,291 @@
-# SQL-Data-Quality-Audit-Pipeline-for-50-000-Synthetic-Government-Records
-SQL-based data quality audit pipeline for profiling, cleaning, validating, and flagging anomalies in 50,000 synthetic employee records.
+# SQL BigQuery Data Quality Audit Pipeline
 
-# Overview
+End-to-end SQL data quality audit pipeline built in **Google BigQuery** to profile, standardize, validate, and flag anomalies across approximately **50,000 synthetic employee records**.
 
-This project demonstrates a SQL-based data quality audit workflow using a 50,000-row synthetic employee dataset modeled after a large-scale government institution data validation case.
+The project simulates an institutional data validation workflow where raw operational data must be converted into trusted, review-ready outputs before it can be used for reporting or decision-making.
 
-The goal of this project is to show how raw data can be profiled, cleaned, standardized, validated, and converted into review-ready outputs using SQL.
+The pipeline includes:
 
-This repository does not contain real government, company, employee, or citizen data. All data used in this project is synthetic and created for portfolio purposes.
+- Raw data profiling and duplicate analysis
+- Set-based cleaning and standardization
+- Production-layer preparation
+- 17 rule-based data quality checks
+- Cross-field reconciliation
+- Row-level exception logging
+- Severity-based review prioritization
+- Validation summaries and audit reconciliation
 
-## Project Background
+> All data in this repository is synthetic. No real employee, company, citizen, or government data is included.
 
-In a real institutional environment, large datasets are often used for reporting, monitoring, compliance, and decision-making. When the dataset contains millions of rows, manual validation is not practical.
+---
 
-The challenge is not only finding errors, but also creating a repeatable and auditable process that explains:
+## Project Overview
 
-- What issue was found
-- Which field was affected
-- How serious the issue is
-- What action should be taken next
-- How many records passed or required review
+Large operational datasets are rarely ready for analysis immediately after ingestion.
 
-This project recreates that type of workflow using SQL and synthetic data.
+Common problems include duplicate identifiers, inconsistent date formats, missing values, mismatched information across related fields, invalid salary ranges, and records that violate business rules.
 
-## Problem
+At smaller volumes these issues may be reviewed manually. At larger volumes, validation needs to become repeatable, traceable, and query-driven.
 
-A large employee-style dataset may contain hidden data quality issues, such as:
+This project builds that workflow using SQL and Google BigQuery.
 
-- Duplicate ID numbers
-- Duplicate employee IDs
-- Inconsistent date formats
-- Missing or blank values
-- Incorrect gender formatting
-- Salary group mismatches
-- Date of birth mismatches
-- Start date mismatches
-- Records that violate business rules
+The objective is not only to identify bad records, but also to answer:
 
-If these issues are not detected, the dataset may produce inaccurate reports and reduce stakeholder trust in the analysis.
+- What issue was detected?
+- Which field was affected?
+- Which business rule failed?
+- How severe is the issue?
+- What action should be taken?
+- Which records require review first?
+- How many records passed validation?
+- Can the reported results be reconciled back to the production dataset?
 
-## Objective
+---
 
-The objective of this project is to build a structured SQL workflow that can:
+## Architecture
 
-1. Profile the raw dataset
-2. Detect duplicate records
-3. Clean and standardize inconsistent fields
-4. Create a production-ready table
-5. Apply validation and anomaly detection rules
-6. Generate a row-level exception log
-7. Summarize data quality results for review
+```text
+Synthetic CSV
+     │
+     ▼
+employee_profile_raw
+     │
+     ├── 01. Data Profiling
+     │
+     ├── 02. Deduplication Analysis
+     │
+     ▼
+emp_prof_staging
+     │
+     │  Exact-row deduplication
+     │  Cleaning
+     │  Standardization
+     │  Data type conversion
+     │
+     ▼
+emp_prof_prod
+     │
+     ├── 05. Validation Checks
+     │
+     ▼
+emp_prof_dqlog
+     │
+     ├── Rule-level exceptions
+     ├── Severity
+     ├── Affected fields
+     └── Recommended actions
+     │
+     ▼
+Quality Reporting
+     ├── Validation summary
+     ├── Issue summary
+     ├── Severity summary
+     └── Review prioritization
+```
 
-## [Dataset](data/synthetic_employee_profile_50000.csv)
+The BigQuery implementation uses **set-based transformations** rather than repeated row-by-row updates. Cleaning logic is consolidated into bulk transformations, while ambiguous or potentially incorrect values are preserved and flagged for review rather than automatically overwritten.
 
-The project uses a synthetic employee profile dataset with approximately 50,000 records.
+---
+
+## Dataset
+
+The project uses approximately **50,000 synthetic employee-style records** designed to reproduce data quality problems that may occur in large institutional datasets.
 
 Example fields include:
 
-- ID number
-- Employee ID
-- Date of birth
-- Start date
-- Gender
-- Salary group
-- Take-home pay
-- Email
+| Field | Description |
+| --- | --- |
+| `id_num` | 16-character identification number |
+| `employee_id` | Employee identifier containing embedded date information |
+| `name` | Employee name |
+| `branch_id` | Branch or organizational unit |
+| `dob` | Date of birth |
+| `phone_number` | Employee phone number |
+| `start_date` | Employment start date |
+| `gender` | Gender category |
+| `group_sal` | Salary group |
+| `thp` | Take-home pay |
+| `email` | Employee email |
+| `last_update` | Source update information |
 
-The dataset is synthetic and does not represent any real person, company, or government institution.
+The dataset intentionally contains duplicate records, inconsistent formats, missing values, cross-field mismatches, and business-rule violations.
 
-## Tools Used
+The 50K dataset is the actual dataset used for this portfolio implementation. The pipeline architecture is designed using set-based SQL patterns that can be applied to larger workloads, but this repository does not claim production testing on millions of rows.
 
-- SQL
-- MySQL-style syntax
+---
+
+## Tools and SQL Concepts
+
+**Platform**
+
+- Google BigQuery
+- GoogleSQL / BigQuery Standard SQL
+
+**SQL techniques**
+
+- Common Table Expressions
 - Window functions
-- Common table expressions
-- Conditional logic
-- Aggregation queries
-- Data validation rules
+- `ROW_NUMBER()`
+- `COUNT() OVER()`
+- `CASE`
+- `COUNTIF()`
+- `SAFE.PARSE_DATE()`
+- `SAFE_DIVIDE()`
+- Regular expressions
+- Cross-field reconciliation
+- Conditional aggregation
+- `UNION ALL`
+- `CREATE OR REPLACE TABLE AS SELECT`
 
-## Workflow
+The repository also retains the original SQL implementation to show how the project evolved before being redesigned for BigQuery.
 
-### 1. Data Profiling
+---
 
-The first step is to understand the raw dataset before making changes.
+# Pipeline Workflow
 
-This includes checking:
+## 01. Data Profiling
+
+Before changing the data, the raw dataset is inspected to understand its structure and existing quality problems.
+
+Profiling includes:
 
 - Total row count
-- Unique ID count
-- Duplicate records
-- Missing values
-- Minimum and maximum values
-- Distinct category values
-- Date and salary ranges
+- Unique identifier counts
+- Exact duplicate detection
+- Missing and blank values
+- Category distributions
+- Salary ranges
+- Date-format patterns
+- Branch, gender, and salary-group distributions
 
-File: [01_data_profiling.sql](sql/01_data_profiling.sql)
+No source values are modified during this stage.
 
+**BigQuery script:**  
+[`01_data_profiling.sql`](bigquery_sql/01_data_profiling.sql)
 
-### 2. Staging and Deduplication
+---
 
-A staging table is created to safely process the raw data before moving it into the final production table.
+## 02. Deduplication Analysis
 
-Duplicate records are identified using SQL window functions and removed from the staging layer.
+Exact duplicate records are identified using `ROW_NUMBER()` across the complete raw record.
 
-File: [02_staging_and_deduplication.sql](sql/02_staging_and_deduplication.sql)
+This stage is analysis-only. It calculates:
 
+- Exact duplicate rows
+- Expected row count after deduplication
+- Duplicate ID numbers
+- Duplicate employee IDs
+- Missing identifiers requiring separate treatment
 
-### 3. Cleaning and Standardization
+Exact duplicates and duplicated business identifiers are intentionally treated as different data quality problems.
 
-In this step, inconsistent values are cleaned and standardized.
+**BigQuery script:**  
+[`02_staging_and_deduplication.sql`](bigquery_sql/02_staging_and_deduplication.sql)
+
+---
+
+## 03. Cleaning and Standardization
+
+Approved transformations are consolidated into a single set-based staging operation.
 
 Examples include:
 
-- Converting date fields into a consistent format
-- Standardizing gender values
-- Cleaning salary group values
-- Replacing blank emails with null values
-- Converting cleaned columns into final data types
+- Exact-row deduplication
+- Branch ID standardization
+- Mixed date-format parsing
+- Phone-number separator removal
+- Leading-zero phone standardization
+- Gender standardization
+- Salary-group standardization
+- Blank email conversion to `NULL`
+- Date conversion into BigQuery `DATE`
 
-File: [03_cleaning_standardization.sql](sql/03_cleaning_standardization.sql)
+Values that cannot be safely inferred are **not automatically corrected**. They remain available for validation and exception reporting.
 
+Post-transformation QA checks verify:
 
-### 4. Production Table Creation
+- Raw rows − duplicate rows = staging rows
+- Expected data types
+- Standardized categories
+- Phone-number conditions
+- THP conditions
+- No new exact duplicates were created by standardization
 
-After cleaning, a production-ready table is created from the staging table.
+**BigQuery script:**  
+[`03_cleaning_standardization.sql`](bigquery_sql/03_cleaning_standardization.sql)
 
-A stable production ID is generated to support validation tracking and exception logging.
+---
 
-File:c [04_create_production_table.sql](sql/04_create_production_table.sql)
+## 04. Production Layer
 
+The standardized staging dataset is promoted into the production validation layer.
 
-### 5. Validation Checks
+A run-level `prod_id` is generated using the processing date and a deterministic row sequence so that every validation exception can be traced back to its production record.
 
-Validation rules are applied to detect invalid, inconsistent, or suspicious records.
+Example:
 
-The checks include:
-
-- Duplicate ID validation
-- Duplicate employee ID validation
-- Date of birth mismatch checks
-- Employee ID structure checks
-- Start date mismatch checks
-- Start age business rule validation
-- Start date rule validation
-- Salary group and take-home pay consistency checks
-- Duplicate email checks
-
-File: [05_validation_checks.sql](sql/05_validation_checks.sql)
-
-
-### 6. Exception Log
-
-A review-ready exception log is created from the validation failures.
-
-The exception log captures:
-
-- Production record ID
-- Validation Rule ID
-- Issue category
-- Error type
-- Affected field
-- Severity level
-- Recommended action
-- Timestamp
-
-This makes the validation output easier to audit, review, and prioritize.
-
-File: [sql/06_exception_log.sql](sql/06_exception_log.sql)
-
-
-### 7. Quality Summary
-
-The final step summarizes the validation results into stakeholder-friendly outputs.
-
-The quality summary includes:
-
-- Issue count by category
-- Issue count by severity
-- Issue count by detailed error type
-- Records that should be reviewed first
-- Passed records vs review-required records
-- Validation pass rate
-
-File: [07_quality_summary.sql](sql/07_quality_summary.sql)
-
-
-### 8. Remediation and Revalidation
-
-The SQL pipeline identifies records that require review, but data correction often requires confirmation from other departments or source data owners.
-
-In real data quality work, validation does not stop after issues are detected. Some failed records require confirmation from the responsible department before the database can be updated. The responsible department would verify the flagged records and provide corrected values or confirmation. After updates are applied, the validation scripts would be rerun to measure the final validation pass rate.
-
-This reflects the practical data quality cycle: detect, review, correct, revalidate, and report.
-
-
-## Main Outputs
-
-This project produces three analytical outputs and one operational handoff template.
-
-### 1. [validation_summary.csv](outputs/validation_summary.csv)
-
-A high-level summary of the validation result.
-
-This output is designed for quick review and shows the overall condition of the dataset after the initial validation run.
-
-**Note:** This output represents the initial audit result before remediation. In a real monthly workflow, records requiring review would be sent to the responsible department through a correction request template. After confirmed updates were applied, the validation checks would be rerun to produce the final reporting dataset.
-
-Example metrics:
-
-- Total clean records
-- Total issue flags
-- Records requiring review
-- Passed records
-- Review-required records
-- Validation pass rate
-
-### 2. [exception_log_sample.csv](outputs/exception_log_sample.csv)
-
-A row-level audit log of validation failures.
-
-This output shows which record failed, what issue was detected, which field was affected, how severe the issue was, and what action should be taken.
-
-Example columns:
-
+```text
+202609150000001
+│       │
+│       └── record sequence
+└────────── processing date
 ```
+
+This table represents standardized data prepared for validation. It does **not** imply that every record has passed data quality checks.
+
+**BigQuery script:**  
+[`04_create_production_table.sql`](bigquery_sql/04_create_production_table.sql)
+
+---
+
+## 05. Validation Checks
+
+A reusable `validation_base` CTE calculates shared validation metrics such as:
+
+- ID occurrence count
+- Employee ID occurrence count
+- Email occurrence count
+- Employee age at start date
+- Start-date day
+- Expected salary group based on THP
+
+Individual validation rules can then use simpler conditions.
+
+Example:
+
+```sql
+SELECT *
+FROM validation_base
+WHERE age_at_start < 18
+   OR age_at_start > 45;
+```
+
+This separates:
+
+**how a validation metric is calculated**
+
+from
+
+**what condition causes a record to fail a rule**
+
+which makes the rules easier to inspect and test individually.
+
+**BigQuery script:**  
+[`05_validation_checks.sql`](bigquery_sql/05_validation_checks.sql)
+
+---
+
+## 06. Exception Log
+
+All approved validation failures are consolidated into an audit-ready exception table.
+
+Each failed rule creates one exception record.
+
+A single production record can therefore produce multiple exception rows if it fails multiple validation rules.
+
+Example structure:
+
+```text
 prod_id
 rule_id
 issue_category
@@ -234,32 +296,249 @@ recommended_action
 logged_at
 ```
 
-### 3. [issue_count_by_error_type.csv](outputs/issue_count_by_error_type.csv)
+`UNION ALL` is used so that every rule failure is retained independently.
 
-A summary of recurring data quality issues.
+The exception-log process also verifies:
 
-This output helps identify the most common issue types so reviewers can prioritize the biggest data quality risks first.
+- Total issue flags
+- Distinct records containing issues
+- Issue count by validation rule
+- Referential consistency between exception records and production records
 
-Example columns:
+**BigQuery script:**  
+[`06_exception_log.sql`](bigquery_sql/06_exception_log.sql)
 
+---
+
+## 07. Quality Summary
+
+The final stage converts detailed exception records into stakeholder-friendly reporting outputs.
+
+Reporting includes:
+
+- Total raw records
+- Exact duplicates removed
+- Production records
+- Records with one or more issues
+- Records passing all validation rules
+- Total issue flags
+- Validation pass rate
+- Issue count by rule
+- Issue count by severity
+- Records requiring the most review attention
+- Final production-to-validation reconciliation
+
+The reporting layer uses aggregation queries rather than creating unnecessary permanent summary tables.
+
+**BigQuery script:**  
+[`07_quality_summary.sql`](bigquery_sql/07_quality_summary.sql)
+
+---
+
+# Validation Rules
+
+The current pipeline contains **17 validation rules**.
+
+| Rule ID | Validation | Severity |
+| --- | --- | --- |
+| VR001 | Duplicate ID number | High |
+| VR002 | Duplicate employee ID | High |
+| VR003 | Invalid ID length | High |
+| VR004 | Invalid employee ID length | High |
+| VR005 | DOB does not match DOB embedded in ID | High |
+| VR006 | DOB does not match DOB embedded in employee ID | High |
+| VR007 | Start date does not match employee ID | Medium |
+| VR008 | Employee start age outside expected range | High |
+| VR009 | Start date is not on the expected first day of month | Low |
+| VR010 | Salary group does not match expected THP range | Medium |
+| VR011 | THP below expected range | Medium |
+| VR012 | THP above expected range | Medium |
+| VR013 | Duplicate email | Medium |
+| VR014 | Missing email | Low |
+| VR015 | Missing branch ID | Medium |
+| VR016 | Missing phone number | Low |
+| VR017 | Invalid phone-number length | Low |
+
+---
+
+# Exception Management
+
+The pipeline distinguishes between **safe standardization** and **issues requiring investigation**.
+
+Safe transformations include formatting changes where the intended value can be determined without changing its business meaning.
+
+Examples:
+
+```text
+branch "BR01" → "01"
+gender "Female" → "F"
+blank email → NULL
+phone separators removed
+supported date strings → DATE
 ```
+
+Potentially substantive problems are preserved and flagged rather than automatically corrected.
+
+Examples include:
+
+```text
+duplicate employee IDs
+DOB mismatches
+salary mismatches
+invalid identifier structures
+unexpected employment start age
+```
+
+This reflects a practical data-quality workflow where the analyst identifies and documents an issue, while the source owner or responsible department confirms the correct value.
+
+---
+
+# Main Outputs
+
+## Validation Summary
+
+[`validation_summary.csv`](outputs/validation_summary.csv)
+
+High-level audit metrics showing the overall quality of the production dataset.
+
+Example metrics:
+
+```text
+total_raw_rows
+duplicate_rows_removed
+total_production_records
+records_with_issues
+records_passed_validation
+total_issue_flags
+validation_pass_rate
+```
+
+---
+
+## Exception Log Sample
+
+[`exception_log_sample.csv`](outputs/exception_log_sample.csv)
+
+A review-ready sample of row-level validation failures.
+
+Instead of exporting only the first records from the exception table, the sample is balanced across validation rules so that multiple issue types are represented.
+
+Example fields:
+
+```text
+prod_id
 rule_id
-error_type
 issue_category
+error_type
+affected_field
 severity
-total_records
+recommended_action
+logged_at
 ```
 
-### [data_correction_request_template.xlsx](templates/data_correction_request_template.xlsx)
+---
 
-A sample operational handoff template used to request corrected values from the responsible data owner or department.
+## Issue Count by Error Type
 
-The file contains records pulled from the production table and exception log where required fields are missing or need confirmation. Blank correction columns are included so the responsible team can provide the correct values before the database is updated and revalidated.
+[`issue_count_by_error_type.csv`](outputs/issue_count_by_error_type.csv)
 
-## Repository Structure
+Aggregated issue counts that show which data quality problems occur most frequently.
 
+This output can be used to identify recurring data-quality patterns and prioritize remediation.
+
+---
+
+## Data Correction Request Template
+
+[`data_correction_request_template.xlsx`](templates/data_correction_request_template.xlsx)
+
+Example operational handoff file for records requiring confirmation from a source owner or responsible department.
+
+The template demonstrates the workflow beyond SQL:
+
+```text
+Detect
+   ↓
+Flag
+   ↓
+Review
+   ↓
+Request correction
+   ↓
+Apply confirmed update
+   ↓
+Revalidate
 ```
-sql-data-quality-audit-pipeline/
+
+---
+
+# Accuracy and Reconciliation
+
+The pipeline includes QA checks throughout the workflow rather than validating only the final output.
+
+Examples include:
+
+**Row-count reconciliation**
+
+```text
+Raw records
+- Exact duplicate rows
+= Expected staging records
+= Actual staging records
+```
+
+**Production reconciliation**
+
+```text
+Records passed validation
++ Records requiring review
+= Total production records
+```
+
+**Exception reconciliation**
+
+Individual validation-rule counts from `05_validation_checks.sql` are compared against the corresponding rule counts materialized in `06_exception_log.sql`.
+
+**Referential QA**
+
+Every `prod_id` in the exception log is verified against the production table.
+
+Expected orphan exception count:
+
+```text
+0
+```
+
+These checks help ensure that the data quality pipeline itself can be audited.
+
+See:
+
+[`accuracy_proof.md`](docs/accuracy_proof.md)
+
+---
+
+# Final Audit Results
+
+After running the complete BigQuery pipeline, the final metrics can be summarized here:
+
+| Metric | Result |
+| --- | ---: |
+| Raw records | `TBD` |
+| Exact duplicates removed | `TBD` |
+| Production records | `TBD` |
+| Records requiring review | `TBD` |
+| Records passing validation | `TBD` |
+| Total issue flags | `TBD` |
+| Validation pass rate | `TBD` |
+
+These values should be populated from the final `07_quality_summary.sql` output so that the README remains consistent with the repository results.
+
+---
+
+# Repository Structure
+
+```text
+SQL-Data-Quality-Audit-Pipeline/
 │
 ├── README.md
 │
@@ -267,6 +546,9 @@ sql-data-quality-audit-pipeline/
 │   └── synthetic_employee_profile_50000.csv
 │
 ├── sql/
+│   └── Original SQL implementation
+│
+├── bigquery_sql/
 │   ├── 01_data_profiling.sql
 │   ├── 02_staging_and_deduplication.sql
 │   ├── 03_cleaning_standardization.sql
@@ -282,66 +564,71 @@ sql-data-quality-audit-pipeline/
 │
 ├── templates/
 │   └── data_correction_request_template.xlsx
-|
+│
 └── docs/
     ├── validation_rules.md
     └── accuracy_proof.md
 ```
 
-## Key Validation Rules
+---
 
-| Rule Area | Description | Severity |
-| --- | --- | --- |
-| Duplicate ID | Detects duplicated ID numbers | High |
-| Duplicate Employee ID | Detects duplicated employee identifiers | High |
-| DOB Mismatch | Compares date of birth fields against embedded ID values | High |
-| Start Date Mismatch | Checks whether employee ID start date matches the start date field | Medium |
-| Start Age Rule | Flags records where start age is outside the expected policy range | High |
-| Start Date Rule | Flags records where start date does not follow the expected day rule | Low |
-| Salary Validation | Compares salary group against take-home pay range | Medium |
-| Duplicate Email | Detects repeated email values | Medium |
+# Original SQL vs BigQuery Version
 
-## Proof of Accuracy
+The repository retains the original SQL implementation while adding a redesigned BigQuery version.
 
-The validation process is supported by several accuracy checks:
+The BigQuery version changes the architecture from sequential row-level transformations toward more scalable set-based processing.
 
-1. Row count reconciliation between raw, staging, and production tables
-2. Duplicate detection using SQL window functions
-3. Rule-based validation for each major field
-4. Cross-field comparison between ID values, date of birth, and start date
-5. Severity classification for prioritization
-6. Row-level exception logging for auditability
-7. Aggregated issue summaries for stakeholder review
+Key changes include:
 
-## What This Project Demonstrates
+| Original Implementation | BigQuery Implementation |
+| --- | --- |
+| Sequential cleaning operations | Consolidated set-based transformation |
+| Staging updates | `CREATE OR REPLACE TABLE AS SELECT` |
+| Repeated validation calculations | Reusable validation CTE |
+| Basic validation output | Standardized exception log |
+| Rule summaries | Rule, severity, and record-level prioritization |
+| SQL workflow | BigQuery-oriented audit pipeline |
 
-This project demonstrates my ability to:
+This allows the repository to show both the original solution and how the design was improved after learning BigQuery.
 
-- Write structured SQL for data quality checking
-- Profile raw datasets before cleaning
-- Design validation rules based on business logic
-- Detect duplicate, invalid, inconsistent, and suspicious records
-- Create audit-ready exception logs
-- Summarize validation results for stakeholders
-- Protect confidential data by using synthetic records in a public portfolio
+---
 
-## Confidentiality Note
+# What This Project Demonstrates
 
-This project is inspired by a real data validation workflow applied in an institutional environment. However, all data, table names, field names, and outputs in this repository have been anonymized, generalized, or recreated using synthetic data.
+This project demonstrates the ability to:
 
-No confidential company, government, employee, or citizen data is included in this repository.
+- Profile unfamiliar raw datasets before transformation
+- Separate safe standardization from ambiguous corrections
+- Build set-based SQL transformations in BigQuery
+- Design reusable data-quality validation logic
+- Reconcile information across related fields
+- Detect duplicates, missing values, format errors, and business-rule exceptions
+- Build standardized row-level exception logs
+- Assign severity and recommended remediation actions
+- Prioritize records requiring manual review
+- Reconcile validation results back to production data
+- Produce stakeholder-friendly data-quality metrics
+- Document an auditable data-validation workflow
 
-## Recommended Use
+---
 
-This project can be reviewed as a portfolio example for roles such as:
+# Confidentiality
 
-- Data Analyst
-- SQL Analyst
-- Data Quality Analyst
-- Data Governance Analyst
-- Business Intelligence Analyst
-- Reporting Analyst
+This project is inspired by the type of data-validation work that may occur in large institutional environments.
 
-## Project Summary
+However:
 
-Built a SQL-based data quality audit pipeline that profiles, cleans, validates, and summarizes a 50,000-row synthetic dataset. The workflow produces audit-ready outputs including a validation summary, exception log, and issue breakdown by error type.
+- All records are synthetic
+- All identifiers are fictitious
+- Field names and business rules are generalized for portfolio purposes
+- No real government, company, employee, customer, or citizen data is included
+
+---
+
+# Project Summary
+
+Built an end-to-end **BigQuery data quality audit pipeline** using approximately **50,000 synthetic employee records**.
+
+The pipeline profiles raw data, removes exact duplicates, standardizes approved fields, applies **17 validation rules**, reconciles related data points, creates an audit-ready row-level exception log, prioritizes issues by severity, and produces quality metrics for stakeholder review.
+
+The project focuses on creating data that is not only cleaner, but also **traceable, reviewable, and trustworthy before reporting**.
